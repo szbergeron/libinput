@@ -33,6 +33,11 @@ MatchName=* Touchpad
 MatchDMIModalias=dmi:*svnDellInc.:pnXPS159500:*
 ModelTouchpadVisibleMarker=0
 
+[Dell XPS 15 9700 Touchpad]
+MatchName=* Touchpad
+MatchDMIModalias=dmi:*svnDellInc.:pnXPS179700:*
+ModelTouchpadVisibleMarker=0
+
 [Dell Latitude D620 Trackpoint]
 MatchName=*DualPoint Stick
 MatchDMIModalias=dmi:*svnDellInc.:pnLatitudeD620*
