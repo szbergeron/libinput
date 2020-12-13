@@ -519,7 +519,7 @@ tp_gesture_handle_state_unknown(struct tp_dispatch *tp, uint64_t time)
 	/* If both touches are within 7mm vertically and 40mm horizontally
 	 * past the timeout, assume scroll/swipe */
 	if ((!tp->gesture.enabled ||
-	     (distance_mm.x < 40.0 && distance_mm.y < 7.0)) &&
+	     (distance_mm.x < 20.0 && distance_mm.y < 4.0)) &&
 	    time > (tp->gesture.initial_time + DEFAULT_GESTURE_SWIPE_TIMEOUT)) {
 		if (tp->gesture.finger_count == 2) {
 			tp_gesture_set_scroll_buildup(tp);
@@ -548,11 +548,11 @@ tp_gesture_handle_state_unknown(struct tp_dispatch *tp, uint64_t time)
 		 * while thumb moves, assume this is "one-finger scrolling."
 		 * This applies only to 2-finger gestures.
 		 */
-		if ((!tp->gesture.enabled || finger_mm < min_move) &&
+		/*if ((!tp->gesture.enabled || finger_mm < min_move) &&
 		    tp->gesture.finger_count == 2) {
 			tp_gesture_set_scroll_buildup(tp);
 			return GESTURE_STATE_SCROLL;
-		}
+		}*/ // SZB: disable "one-finger scrolling"
 
 		/* If more than 2 fingers are involved, and the thumb moves
 		 * while the fingers stay still, assume a pinch if eligible.
